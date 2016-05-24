@@ -1,30 +1,12 @@
 <?php
 
-use GuzzleHttp\Client;
-use GuzzleHttp\TransferStats;
-
 class SiteController extends Controller
 {
-	/**
-	 * Declares class-based actions.
-	 */
-	public function actions()
-	{
-		return array(
-			// captcha action renders the CAPTCHA image displayed on the contact page
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
-				'backColor'=>0xFFFFFF,
-			),
-		);
-	}
-
 	/**
 	 * Main page
 	 */
 	public function actionIndex()
 	{
-		//$api_key = '52d18ef7a758a8e16d6aa5f3dc1abf9d';
 		$this->render('index');
 	}
 
@@ -54,7 +36,6 @@ class SiteController extends Controller
 		]);
 	}
 
-
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
@@ -63,7 +44,6 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->user->loginUrl);
 	}
-
 
 	/**
 	 * This is the action to handle external exceptions.
