@@ -18,6 +18,7 @@
     }
   },
   "scripts": {
+    "post-install-cmd": "Hook\\Composer::postInstall",
     "post-update-cmd": "Hook\\Composer::postUpdate"
   }
 }
