@@ -1,0 +1,23 @@
+{
+  "config": {
+    "vendor-dir": "protected/vendor"
+  },
+  "require": {
+    "php": ">=5.3.2",
+    "ext-curl": "*",
+    "ext-pdo_sqlite": "*",
+    "yiisoft/yii": "1.1.*",
+    "guzzlehttp/guzzle": "6.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Hook": "./protected/installer"
+    },
+    "psr-4": {
+      "TmApi\\": "./protected/components/TmApi"
+    }
+  },
+  "scripts": {
+    "post-update-cmd": "Hook\\Composer::postUpdate"
+  }
+}
